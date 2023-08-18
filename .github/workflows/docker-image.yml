@@ -22,9 +22,9 @@ jobs:
       run: docker build . --file resource-util/Dockerfile --tag campionulclujului/resource-app-github:latest
     - name: Login Docker Hub
       run: |
-        echo "DOCKER_USERNAME: $DOCKER_USERNAME"
-        echo "DOCKER_PASSWORD: $DOCKER_PASSWORD" 
-        docker login -p $DOCKER_PASSWORD -u $DOCKER_USERNAME
+        echo "DOCKER_USERNAME: ${{ vars.DOCKER_USERNAME }} "
+        echo "DOCKER_PASSWORD: ${{ vars.DOCKER_PASSWORD }}" 
+        docker login -p ${{ vars.DOCKER_PASSWORD }} -u ${{ vars.DOCKER_USERNAME }}
     - name: Push authentication app
       run: docker push campionulclujului/auth-app-github:latest
     - name: Push resource util app
