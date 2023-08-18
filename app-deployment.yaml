@@ -16,7 +16,7 @@ spec:
         - name: app-container
           image: campionulclujului/resource-app:latest
           ports:
-            - containerPort: 5000
+            - containerPort: 8082
           resources:
             limits:
               cpu: "1"
