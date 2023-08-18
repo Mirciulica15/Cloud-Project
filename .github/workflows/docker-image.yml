@@ -12,6 +12,8 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    environment: Docker
+
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image for authentication app
@@ -19,7 +21,7 @@ jobs:
     - name: Build the Docker image for resource util app
       run: docker build . --file resource-util/Dockerfile --tag campionulclujului/resource-app-github:latest
     - name: Login Docker Hub
-      run: docker login
+      run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
     - name: Push authentication app
       run: docker push campionulclujului/auth-app-github:latest
     - name: Push resource util app
