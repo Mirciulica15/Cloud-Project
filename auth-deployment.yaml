@@ -16,7 +16,7 @@ spec:
         - name: auth-container
           image: campionulclujului/auth-app:latest
           ports:
-            - containerPort: 5000
+            - containerPort: 8081
           resources:
             limits:
               cpu: "1"
